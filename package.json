@@ -11,7 +11,8 @@
     "format": "prettier --write --loglevel=warn './**/*.{js,jsx,ts,tsx,gql,graphql,json}'",
     "lint:fix": "eslint --fix './**/*.{js,jsx,ts,tsx}'",
     "lint:conflict": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "postinstall": "typesync"
+    "postinstall": "typesync",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.11.9",
@@ -38,17 +39,12 @@
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.2",
+    "husky": "^8.0.0",
     "lint-staged": "^13.0.4",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "tailwindcss": "^3.2.4",
     "typesync": "^0.9.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
