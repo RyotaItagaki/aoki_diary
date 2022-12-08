@@ -1,4 +1,7 @@
 {
+  "files.autoSave": "afterDelay",
+  //自動保存の遅延
+  "files.autoSaveDelay": 500,
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
@@ -32,7 +35,7 @@
   ],
   "editor.wordWrap": "on",
   "eslint.packageManager": "yarn",
-  "files.insertFinalNewline": true,
+  "files.insertFinalNewline": false,
   "files.trimTrailingWhitespace": false,
   "npm.packageManager": "yarn",
   "typescript.enablePromptUseWorkspaceTsdk": true
