@@ -1,17 +1,12 @@
-// import Head from 'next/head';
-// import Image from 'next/image';
-import Header from '../components/header';
-import Footer from '../components/footer';
-// import styles from '../styles/Home.module.css';
+import Template from '../components/template';
 
 const Home = () => (
-  <>
-    <Header />
-    <main>
-      <p>とも</p>
-    </main>
-    <Footer />
-  </>
+  <Template>
+    <p>ここにコンテンツを入れる</p>
+    <div>
+      <p>こんな感じ</p>
+    </div>
+  </Template>
 );
 
 export default Home;
