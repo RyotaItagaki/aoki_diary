@@ -1,5 +1,5 @@
-import PostsList from '../components/postsList';
-import Template from '../components/template';
+import PostsList from '../components/organisms/postsList';
+import Template from '../components/templates/template';
 
 const Home = () => (
   <Template>
