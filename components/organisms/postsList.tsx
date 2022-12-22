@@ -1,12 +1,13 @@
 import PostLink from '../molcules/postLink';
+import { Content } from '../../types';
 
-const PostsList = () => {
-  const testArray = [1, 2, 3, 4, 5, 6, 7, 8];
+const PostsList = (props: { contents: Content[] }) => {
+  const { contents } = props;
 
   return (
     <div className="w-9/12 my-8 mx-auto grid grid-cols-3 gap-4">
-      {testArray.map((ele) => (
-        <PostLink key={ele} />
+      {contents.map((ele) => (
+        <PostLink key={ele.id} content={ele} />
       ))}
     </div>
   );
