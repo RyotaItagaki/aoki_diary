@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import getList from '../lib/posts';
+import { getList } from '../lib/posts';
 import PostsList from '../components/organisms/postsList';
 import Template from '../components/templates/template';
 import { Content } from '../types';

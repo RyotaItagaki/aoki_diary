@@ -6,7 +6,8 @@ const client = createClient({
   apiKey: '57c3d0f9f8ae46e3b5db963bd07c4063d7c2',
 });
 
-const getList = async () => {
+// 記事一覧
+export const getList = async () => {
   const data = await client.getList<Content>({
     endpoint: 'blogs',
   });
@@ -14,4 +15,12 @@ const getList = async () => {
   return data;
 };
 
-export default getList;
+// 記事詳細
+export const getDetail = async (contentId: string) => {
+  const data = await client.get<Content>({
+    endpoint: 'blogs',
+    contentId,
+  });
+
+  return data;
+};
