@@ -1,4 +1,4 @@
-import { getList, getDetail } from '../lib/posts';
+import { getList, getDetail, getIds } from '../lib/posts';
 
 describe('記事一覧が取得できる', () => {
   test('totalcountが2である', async () => {
@@ -29,5 +29,14 @@ describe('記事詳細が取得できる', () => {
     const result = await getDetail('grwejo0vc5ay');
     // 検証
     expect(result.title).toBe('テストタイトル');
+  });
+});
+
+describe('記事のコンテンツIDの一覧が取得できる', () => {
+  test('1つ目のidがgrwejo0vc5ayである', async () => {
+    // 実行
+    const result = await getIds();
+    // 検証
+    expect(result[0].params.id).toBe('grwejo0vc5ay');
   });
 });

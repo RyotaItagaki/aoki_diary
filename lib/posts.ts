@@ -24,3 +24,18 @@ export const getDetail = async (contentId: string) => {
 
   return data;
 };
+
+// 記事のidの配列一覧
+export const getIds = async () => {
+  const data = await client.getList<Content>({
+    endpoint: 'blogs',
+  });
+
+  const ids = data.contents.map((ele) => ({
+    params: {
+      id: ele.id,
+    },
+  }));
+
+  return ids;
+};
