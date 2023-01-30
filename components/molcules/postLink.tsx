@@ -7,10 +7,12 @@ type Props = {
 };
 
 const PostLink = ({ content }: Props) => {
-  const { title, updatedAt, eyecatch } = content;
+  const { id, title, updatedAt, eyecatch } = content;
+
+  const path = `/post/${id}`;
 
   return (
-    <Link href="/" className="block w-full">
+    <Link href={path} className="block w-full">
       <Image src={eyecatch.url} alt="" width={300} height={100} />
       <div>
         <p>更新日：{updatedAt}</p>

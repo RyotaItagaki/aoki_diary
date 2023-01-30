@@ -1,10 +1,10 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import Image from 'next/image';
-import parse from 'html-react-parser';
 import { ParsedUrlQuery } from 'node:querystring';
+import Template from '../../components/templates/template';
 import { Content } from '../../types';
 
 import { getDetail, getIds } from '../../lib/posts'; // 読み込みパス直したい
+import PostDetail from '../../components/organisms/postDetail';
 
 type Props = {
   propsContent: Content | undefined;
@@ -49,21 +49,10 @@ const Post = ({ propsContent }: Props) => {
     return <p>aaa</p>;
   }
 
-  const { id, title, updatedAt, content, eyecatch } = propsContent;
-
   return (
-    <>
-      <Image
-        src={eyecatch.url}
-        alt="アイキャッチ画像"
-        width={300}
-        height={100}
-      />
-      <p>{id}</p>
-      <p>{title}</p>
-      <p>{updatedAt}</p>
-      {parse(content)}
-    </>
+    <Template>
+      <PostDetail propsContent={propsContent} />
+    </Template>
   );
 };
 
